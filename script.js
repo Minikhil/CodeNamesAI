@@ -8,7 +8,7 @@ let words = [];
         };
 
 async function generateWordsFromCategories(categories) {
-    const apiKey = 'sk-weeYv5J_XIVcW1qa9uuVOwZqjGqu12J_TyXpgK6pzkT3BlbkFJWmI6VBwdFcaXbjPnmWlJ_j_nSF45ODvExG52x2Jx0A'; // Replace with your actual API key
+    const apiKey = config.apiKey; // Replace with your actual API key
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
     const prompt = `Generate 5 single words for each of the following categories, suitable for a game of Codenames. The words should be related to their category but not too obvious. Categories: ${categories.join(', ')}. Format the response as a JSON array of arrays, where each inner array represents a category.`;
