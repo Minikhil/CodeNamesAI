@@ -1,3 +1,7 @@
+//LOCAL DEV
+//const API_KEY = console.apiKey;
+//PROD DEV
+const API_KEY = process.env.API_KEY
 
 let words = [];
         let gameState = {
@@ -17,7 +21,7 @@ async function generateWordsFromCategories(categories) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${config.apiKey}`
+            'Authorization': `Bearer ${API_KEY}`
         },
         body: JSON.stringify({
             model: "gpt-4o-mini",
