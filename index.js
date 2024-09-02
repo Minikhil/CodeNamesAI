@@ -1,7 +1,4 @@
 
-const MY_API_KEY = process.env.MY_API_KEY;
-//'sk-weeYv5J_XIVcW1qa9uuVOwZqjGqu12J_TyXpgK6pzkT3BlbkFJWmI6VBwdFcaXbjPnmWlJ_j_nSF45ODvExG52x2Jx0A';
-
 let words = [];
         let gameState = {
             currentTeam: 'red',
@@ -20,7 +17,7 @@ async function generateWordsFromCategories(categories) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${MY_API_KEY}`
+            'Authorization': `Bearer ${config.apiKey}`
         },
         body: JSON.stringify({
             model: "gpt-4o-mini",
